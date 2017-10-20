@@ -2,6 +2,8 @@ package me.lionelfaber.jfm;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -14,6 +16,8 @@ import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
+
+import static android.content.Context.CONNECTIVITY_SERVICE;
 
 /**
  * Created by lionel on 18/10/17.
@@ -59,10 +63,12 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int i) {
-        if(i == 0)
+        if(i == 0 && isNetworkAvailable())
             Picasso.with(context).load(links.get(i).getLink()).resize(650, 650).into(holder.img_android);
-        else
-            Glide.with(context).load(getImage(links.get(i).getLink())).override(500, 100).into(holder.img_android);
+        else {
+            Log.d("i = ", "" + i);
+            Glide.with(context).load(getImage(links.get(i).getLink())).into(holder.img_android);
+        }
     }
 
 
@@ -75,6 +81,13 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.ViewHolder>{
     public int getItemCount() {
         return links.size();
     }
+
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager)context.getSystemService( CONNECTIVITY_SERVICE );
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
 
 
 

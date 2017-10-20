@@ -78,8 +78,8 @@ public class HomeFragment extends Fragment {
 
     public void loadStaticContent()
     {
-        ImageLink dummy = new ImageLink(null);
-        linkList.add(dummy);
+        ImageLink offline = new ImageLink("sample");
+        linkList.add(offline);
         ImageLink imageLink = new ImageLink("livestream", "http://www.jesusfireministries.tv");
         linkList.add(imageLink);
         imageLink = new ImageLink("youtube", "https://www.youtube.com/channel/UCr38nJ4G8vDlyWSn_LWTZGg");
