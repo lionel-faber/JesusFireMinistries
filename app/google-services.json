@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "273096925273",
+    "firebase_url": "https://jesus-fire-ministries.firebaseio.com",
+    "project_id": "jesus-fire-ministries",
+    "storage_bucket": "jesus-fire-ministries.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:273096925273:android:46167c7bef4e512d",
+        "android_client_info": {
+          "package_name": "me.lionelfaber.jfm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "273096925273-5dst17pida15tkfgtnpumu5kig11vvoi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAy8BT86F0HNC8KMNCPJiTCztDYz8vP0mo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

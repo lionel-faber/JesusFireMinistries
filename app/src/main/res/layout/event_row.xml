@@ -1,0 +1,28 @@
+<LinearLayout xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical"
+    card_view:cardCornerRadius="2dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:id="@+id/event_header"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:id="@+id/event_content"
+            android:lineSpacingMultiplier="1.2"
+            android:layout_gravity="center"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
