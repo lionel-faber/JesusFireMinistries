@@ -28,11 +28,15 @@ public class Splash extends Activity {
         ImageView logo = (ImageView)findViewById(R.id.logo);
         Glide.with(this).load(R.drawable.jfmlogo).into(logo);
         TextView title = (TextView)findViewById(R.id.title);
+        TextView subtitle = (TextView)findViewById(R.id.subtitle);
 
         Typeface tf = Typeface.createFromAsset(this.getAssets(),"fonts/ERASDEMI.TTF");
         title.setTextColor(Color.WHITE);
-        title.setTextSize(60);
+        title.setTextSize(30);
         title.setTypeface(tf);
+        subtitle.setTextColor(Color.WHITE);
+        subtitle.setTextSize(20);
+        subtitle.setTypeface(tf);
 
         /* New Handler to start the Menu-Activity
          * and close this Splash-Screen after some seconds.*/
