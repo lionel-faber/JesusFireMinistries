@@ -58,17 +58,17 @@ public class TestimonialFragment extends Fragment {
 
         testimonials.add(testimonial);
 
-        testimonial = new Testimonial("Sister Anita Minz", "Jharkhand", "I had two children who were crippled and bed ridden; they could not talk nor walk. I had attended the " +
-                "healing crusade of Pastor Robinson in Ranchi, and I beleived God had healed my children. When I went " +
-                "back hom from the meeting my both children were walking and talking. All Praise and glory to our Lord " +
-                "Jesus Christ!", "female");
-
-        testimonials.add(testimonial);
-
         testimonial = new Testimonial("Brother Don Bosco", "Chennai", "Me and my wife were married in the year 1993. Since then we did not have children. We spoke to " +
                 "Pastor about our problem and Pastor prayed for us and prophesized that God will surely bless us with a " +
                 "child. We had faith and believed the word of the Lord. Now after 18 years of marriage God has blessed " +
                 "us with a Boy and he has made his word come to pass. All glory to God!", "male");
+
+        testimonials.add(testimonial);
+
+        testimonial = new Testimonial("Sister Anita Minz", "Jharkhand", "I had two children who were crippled and bed ridden; they could not talk nor walk. I had attended the " +
+                "healing crusade of Pastor Robinson in Ranchi, and I beleived God had healed my children. When I went " +
+                "back hom from the meeting my both children were walking and talking. All Praise and glory to our Lord " +
+                "Jesus Christ!", "female");
 
         testimonials.add(testimonial);
 

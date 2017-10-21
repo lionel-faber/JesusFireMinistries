@@ -14,11 +14,19 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.koushikdutta.ion.Ion;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 
 import static me.lionelfaber.jfm.R.id.imageView;
 
@@ -30,7 +38,7 @@ import static me.lionelfaber.jfm.R.id.imageView;
 public class PrayerRequests extends Fragment {
 
     EditText name, phone, message;
-    String sName, sPhone, sMessage;
+    String sName, sPhone, sMessage, url;
     Button send;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -55,15 +63,39 @@ public class PrayerRequests extends Fragment {
                 sPhone = phone.getText().toString();
                 sMessage = message.getText().toString();
 
-                try {
-                    GMailSender sender = new GMailSender("lionel1704@mail.com", "passwordhere");
-                    sender.sendMail(sName + " - " + sPhone,
-                            sMessage,
-                            "lionel1704@gmail.com",
-                            "14itsjit@gmail.com");
-                } catch (Exception e) {
-                    Log.e("SendMail", e.getMessage(), e);
-                }
+                url = "http://192.168.43.231:8000/api/requestprayer";
+                StringRequest postRequest = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>()
+                        {
+                            @Override
+                            public void onResponse(String response) {
+                                // response
+                                Toast.makeText(getActivity(), response, Toast.LENGTH_LONG).show();
+                                Log.d("Response", response);
+                            }
+                        },
+                        new Response.ErrorListener()
+                        {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                // error
+                                Log.d("Error.Response", error.toString());
+                            }
+                        }
+                ) {
+                    @Override
+                    protected Map<String, String> getParams()
+                    {
+                        Map<String, String>  params = new HashMap<String, String>();
+                        params.put("sender_name", sName);
+                        params.put("prayer_request", sMessage);
+                        params.put("phone_no", sPhone);
+
+                        return params;
+                    }
+                };
+                RequestQueue queue = Volley.newRequestQueue(getActivity());
+                queue.add(postRequest);
             }
         });
 
