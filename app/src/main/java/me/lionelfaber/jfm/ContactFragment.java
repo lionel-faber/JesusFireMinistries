@@ -40,48 +40,28 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback{
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
         // Defines the xml file for the fragment
-
         return inflater.inflate(R.layout.contactframe, parent, false);
 
     }
-
-    @Override
-    public void onMapReady(GoogleMap googleMap) {
-        map = googleMap;
-        //map.getUiSettings().setZoomControlsEnabled(true);
-        map.addMarker(new MarkerOptions().position(new LatLng(12.920290, 80.251283)));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(12.920290, 80.251283), 15));
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mapView.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mapView.onPause();
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        mapView.onDestroy();
-    }
-
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         mapView = (MapView) view.findViewById(R.id.mapview);
         mapView.onCreate(savedInstanceState);
+
         mapView.getMapAsync(this);
 
+        MapsInitializer.initialize(getActivity());
 
 
     }
 
+    @Override
+    public void onMapReady(GoogleMap map) {
+        map.addMarker(new MarkerOptions()
+                .position(new LatLng(12.920290, 80.251283))
+                .title("Jesus Fire Minitries"));
 
-
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(12.920290, 80.251283), 15));
+    }
 }

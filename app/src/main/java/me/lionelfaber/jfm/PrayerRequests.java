@@ -63,7 +63,7 @@ public class PrayerRequests extends Fragment {
                 sPhone = phone.getText().toString();
                 sMessage = message.getText().toString();
 
-                url = "http://192.168.43.231:8000/api/requestprayer";
+                url = "http://jfm.pythonanywhere.com/api/requestprayer";
                 StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>()
                         {

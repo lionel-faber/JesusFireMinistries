@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         ((MainActivity)getActivity()).setActionBarTitle("Jesus Fire Ministries");
-        url = "http://192.168.43.231:8000/api/get/images";
+        url = "http://jfm.pythonanywhere.com/api/get/images";
         linkList = new ArrayList<>();
 
         recyclerView = (RecyclerView)view.findViewById(R.id.home_recycler_view);

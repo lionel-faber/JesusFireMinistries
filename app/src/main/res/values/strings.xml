@@ -6,12 +6,10 @@
     <string name="google_maps_key"> AIzaSyDW1pZcY7EzSZkO9tMXjuSFMbuYyAaoUs8 </string>
     <string name="content">\nPastor P.J.C. Robinson was born on 23rd May 1967, in Chennai.  In 1993 Pastor Robinson\'s life took an entirely new meaning when he surrendered his heart and life to Jesus Christ. He had been healed miraculously at the age of 12 from a life threatening disease and his parents surrendered his future into God\'s hand. Since then the Holy spirit has been working in his life in a mighty way.\n\nGod called him into the ministry and he started ministring for God, and many have been blessed and continue to be blessed by his tireless efforts in proclaiming the gospel. The Lord has given a church for Pastor Robinson in Injambakkam, East coast road, Chennai.\n\nMarried in 1995, Pastor Robinson, and his wife Joy Shekinah have two sons and a daughter. Multitudes of people today reap the great blessing of Pastor\'s vision. JFM today is testament to his sacrificial work, single minded devotion, effective and sincere prayer as he laboured to realize the revelation the Lord have him regarding this ministry. The Lord\'s rich anointing, counsel and grace helped him direct and lead this ministry, on all sides, with souls being added continuously is a visible proof confirming the effectual working of Holy Spirit.\n</string>
 
-    <string name="test_string">Blah blah blah blah blah blah blah blah balh blah blahblah blah blah bl asdfasdfasfda sfashdf lkahflaksjdhfalskdhfalskdhfalskdjhfalskjdhfalskdjhfalskdjhfasldkjhfaslkdhfaslkdhfaslkdhfaslkdhfaslkdjhfalkdsjhflksajdhflksajdhflksahflakjsdhflksadjhflkdsajhfalkdsjhfalkdsjhflkahflaksjdhflkjasflkjashdkfhaslkd
-        hfalkdsjhfalkjshdfslkdjhadslkajhflkjsf</string>
-
     <string name="action_settings">Settings</string>
-    <string name="home_address">No. 569B, Jaishankar Nagar Main Road,\n Palavakkam, Chennai,\nIndia. 600 041\n</string>
-    <string name="church_address">No. 1 / 110, East Coast Road,\n Injambakkamm, Chennai,\nIndia. 600 115\n</string>
+    <string name="church_address"> No. 1 / 110, East Coast Road,\n Injambakkamm, Chennai,\nIndia. 600 115</string>
     <string name="vision">Our Church is a Christ-centered church that loves God and loves people, and transforms people into world changers. Our core values are building community, making disciples, and reaching the lost.\n</string>
     <string name="mission">     - To be a multi-generational church that attracts people from all walks of life and connects them to God through Jesus Christ.\n     - To transform lives into world changers.</string>
+    <string name="phone">9884422235, 9677222004.</string>
+    <string name="email">pjcrobinsam@yahoo.com</string>
 </resources>

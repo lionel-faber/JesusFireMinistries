@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:padding="20dp"
         android:layout_height="match_parent">
 
         <LinearLayout
@@ -14,35 +13,61 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"
-                android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
-                android:text="P.J.C. Robinson"
-                />
-
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="14dp">
+                android:padding="10dp">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_gravity="top"
                         android:src="@drawable/church" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-                        android:layout_weight="1"
-                        android:text="@string/church_address" />
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="3dp"
+                            android:text="Jesus Fire Ministries" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:layout_weight="1"
+                            android:text="@string/church_address" />
+
+                    </LinearLayout>
+
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_weight="1"
+                        android:background="#000"
+                        android:padding="2dip" />
                 </TableRow>
 
                 <TableRow
@@ -50,37 +75,100 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/home" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-                        android:text="@string/home_address" />
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_margin="5dp"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_gravity="top"
                         android:src="@drawable/phone" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-                        android:layout_weight="1"
-                        android:text="9884422235, 9677222004.\n" />
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical">
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:layout_weight="1"
+                            android:layout_marginBottom="3dp"
+                            android:text="Phone Numbers:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:layout_weight="1"
+                            android:text="@string/phone" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_weight="1"
+                        android:background="#000"
+                        android:padding="2dip" />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_gravity="top"
+                        android:src="@drawable/email" />
+
+                    <LinearLayout
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:layout_marginBottom="3dp"
+                            android:layout_weight="1"
+                            android:text="Email:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:layout_weight="1"
+                            android:text="@string/email" />
+
+                    </LinearLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_weight="1"
+                        android:background="#000"
+                        android:padding="2dip" />
                 </TableRow>
 
                 <TableRow
@@ -88,23 +176,68 @@
                     android:layout_height="match_parent">
 
                     <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="20dp"
-                        android:layout_margin="5dp"
-                        android:src="@drawable/email" />
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="25dp"
+                        android:layout_gravity="top"
+                        android:src="@drawable/website" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
                         android:layout_height="wrap_content"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
-                        android:layout_weight="1"
-                        android:text="pjcrobinsam@yahoo.com.\n" />
+                        android:layout_width="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:layout_marginBottom="3dp"
+                            android:layout_weight="1"
+                            android:text="Website:" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:layout_weight="1"
+                            android:text="www.jesusfireministries.org" />
+
+                    </LinearLayout>
 
                 </TableRow>
 
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dip"
+                        android:layout_weight="1"
+                        android:background="#000"
+                        android:padding="2dip" />
+                </TableRow>
+
+
+                <TableRow>
+
+                    <TextView
+                        android:text="Locate us on Google Maps"
+                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:layout_width="wrap_content"/>
+
+                </TableRow>
+
+
             </TableLayout>
-            <com.google.android.gms.maps.MapView
-                android:id="@+id/mapview"
+
+            <com.google.android.gms.maps.MapView android:id="@+id/mapview"
                 android:layout_width="fill_parent"
                 android:layout_height="150dp" />
 

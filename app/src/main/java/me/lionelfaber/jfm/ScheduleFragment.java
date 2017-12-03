@@ -54,14 +54,11 @@ public class ScheduleFragment extends Fragment {
 
         recyclerView = (RecyclerView)view.findViewById(R.id.schedule_recycler_view);
         recyclerView.setHasFixedSize(true);
+        recyclerView.setNestedScrollingEnabled(false);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        Event event = new Event("", "\n\n\n\n");
-
-        eventList.add(event);
-
-        event = new Event("Sunday Service", "Time : IST 08:30 am to 12:30 pm\n" +
+        Event event = new Event("Sunday Service", "Time : IST 08:30 am to 12:30 pm\n" +
                 "Place : ACA Injambakkam, East Coast Road, Chennai.\n\n" +
                 "We whole-heartedly welcome you and your family on joining us " +
                 "in praising our Lord and Saviour Jesus Christ.");
