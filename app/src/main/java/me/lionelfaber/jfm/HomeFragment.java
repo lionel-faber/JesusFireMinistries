@@ -37,6 +37,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import static android.content.Context.CONNECTIVITY_SERVICE;
+import static android.content.Context.SYSTEM_HEALTH_SERVICE;
 import static me.lionelfaber.jfm.R.id.imageView;
 
 
@@ -61,12 +62,10 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         ((MainActivity)getActivity()).setActionBarTitle("Jesus Fire Ministries");
-        url = "http://jfm.pythonanywhere.com/api/get/images";
+        url = "http://192.168.43.231:8000/api/get/photos";
         linkList = new ArrayList<>();
 
         recyclerView = (RecyclerView)view.findViewById(R.id.home_recycler_view);
-//        adapter = new HomeAdapter(getActivity(),linkList);
-
         recyclerView.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
@@ -108,8 +107,13 @@ public class HomeFragment extends Fragment {
                                 JSONObject l = (JSONObject) response.get(i);
 
                                 String link = l.getString("link");
-                                ImageLink imageLink = new ImageLink(link);
-                                linkList.set(0, imageLink);
+                                String id = l.getString("event_id");
+                                // add only main image
+                                if(id.equals("2")) {
+                                    ImageLink imageLink = new ImageLink(link);
+                                    linkList.set(0, imageLink);
+                                    break;
+                                }
                             }
 
                             adapter.notifyDataSetChanged();
