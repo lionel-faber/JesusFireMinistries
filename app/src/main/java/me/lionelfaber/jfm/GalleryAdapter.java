@@ -47,6 +47,7 @@ public class GalleryAdapter extends RecyclerView.Adapter<GalleryAdapter.ViewHold
         @Override
         public void onClick(View v) {
             // open gallery activity
+            context.startActivity(new Intent(context, GalleryActivity.class));
             }
 
         }

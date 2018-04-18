@@ -16,6 +16,7 @@
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:stretchColumns="*"
                 android:padding="10dp">
 
                 <TableRow
@@ -28,7 +29,7 @@
                         android:layout_marginTop="25dp"
                         android:layout_marginRight="20dp"
                         android:layout_gravity="top"
-                        android:src="@drawable/church" />
+                        android:src="@drawable/home" />
 
                     <LinearLayout
                         android:layout_height="wrap_content"
@@ -38,7 +39,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Headline"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                             android:layout_weight="1"
                             android:layout_marginBottom="3dp"
                             android:text="Jesus Fire Ministries" />
@@ -46,7 +47,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                             android:layout_weight="1"
                             android:text="@string/church_address" />
 
@@ -59,15 +60,15 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dip"
-                        android:layout_weight="1"
-                        android:background="#000"
-                        android:padding="2dip" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:src="@drawable/divline"/>
+
                 </TableRow>
 
                 <TableRow
@@ -90,7 +91,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                             android:layout_weight="1"
                             android:layout_marginBottom="3dp"
                             android:text="Phone Numbers:" />
@@ -98,7 +99,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                             android:layout_weight="1"
                             android:text="@string/phone" />
 
@@ -109,15 +110,16 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dip"
-                        android:layout_weight="1"
-                        android:background="#000"
-                        android:padding="2dip" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_span="2"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/divline"/>
+
+
                 </TableRow>
 
 
@@ -141,7 +143,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                             android:layout_marginBottom="3dp"
                             android:layout_weight="1"
                             android:text="Email:" />
@@ -149,7 +151,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                             android:layout_weight="1"
                             android:text="@string/email" />
 
@@ -160,15 +162,16 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dip"
-                        android:layout_weight="1"
-                        android:background="#000"
-                        android:padding="2dip" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:src="@drawable/divline"/>
+
+
                 </TableRow>
 
                 <TableRow
@@ -191,7 +194,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                             android:layout_marginBottom="3dp"
                             android:layout_weight="1"
                             android:text="Website:" />
@@ -199,7 +202,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Light.Widget.PopupMenu.Large"
+                            android:textAppearance="@style/Base.TextAppearance.AppCompat.Body1"
                             android:layout_weight="1"
                             android:text="www.jesusfireministries.org" />
 
@@ -210,15 +213,14 @@
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp">
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
 
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dip"
-                        android:layout_weight="1"
-                        android:background="#000"
-                        android:padding="2dip" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_span="2"
+                        android:src="@drawable/divline"/>
                 </TableRow>
 
 
@@ -229,7 +231,7 @@
                         android:gravity="center"
                         android:layout_height="wrap_content"
                         android:layout_span="2"
-                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Body2"
                         android:layout_width="wrap_content"/>
 
                 </TableRow>

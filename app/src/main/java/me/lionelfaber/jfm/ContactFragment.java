@@ -46,6 +46,8 @@ public class ContactFragment extends Fragment implements OnMapReadyCallback{
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
+        ((MainActivity)getActivity()).setActionBarTitle("Connect with us");
+
         mapView = (MapView) view.findViewById(R.id.mapview);
         mapView.onCreate(savedInstanceState);
 

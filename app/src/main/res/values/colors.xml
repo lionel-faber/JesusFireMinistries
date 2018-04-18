@@ -6,4 +6,5 @@
     <color name="colorPrimaryLight">#432965</color>
     <color name="primaryTextColor">#ffffff</color>
     <color name="backgroundColor">#f4f1d4</color>
+    <color name="semi_transparent_black">#90000000</color>
 </resources>

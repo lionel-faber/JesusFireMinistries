@@ -49,6 +49,8 @@ public class PrayerRequests extends Fragment {
 
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
+
+        ((MainActivity)getActivity()).setActionBarTitle("Prayer Requests");
         name = (EditText) view.findViewById(R.id.name);
         phone = (EditText) view.findViewById(R.id.phone_number);
         message = (EditText) view.findViewById(R.id.message);
@@ -63,7 +65,7 @@ public class PrayerRequests extends Fragment {
                 sPhone = phone.getText().toString();
                 sMessage = message.getText().toString();
 
-                url = "http://jfm.pythonanywhere.com/api/requestprayer";
+                url = "http://192.168.43.231:8000/api/requestprayer";
                 StringRequest postRequest = new StringRequest(Request.Method.POST, url,
                         new Response.Listener<String>()
                         {

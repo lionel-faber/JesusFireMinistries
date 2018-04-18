@@ -29,7 +29,7 @@
         <item
             android:id="@+id/nav_contact"
             android:icon="@drawable/contact"
-            android:title="Contact Us" />
+            android:title="Connect with us" />
     </group>
 
 </menu>

@@ -1,7 +1,6 @@
 package me.lionelfaber.jfm;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -9,7 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
@@ -18,18 +17,17 @@ import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.koushikdutta.ion.Ion;
+import com.google.api.client.extensions.android.http.AndroidHttp;
+import com.google.api.client.http.HttpTransport;
+import com.google.api.client.json.gson.GsonFactory;
+import com.google.api.services.youtube.YouTube;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 
-import static me.lionelfaber.jfm.R.id.imageView;
 
 
 /**
@@ -38,11 +36,13 @@ import static me.lionelfaber.jfm.R.id.imageView;
 
 public class GalleryFragment extends Fragment {
 
-    RecyclerView recyclerView;
-    LinearLayoutManager layoutManager;
-    String url;
-    ArrayList<Album> albumList;
-    GalleryAdapter adapter;
+    Button photo, video;
+    private static final String[] YOUTUBE_PLAYLISTS = {"PL1n2XkkFRzSjFS-iLetJMVM7iK0Kf8K_g",
+            "PL1n2XkkFRzShgZK6lRRc63AarhLffNHKD"
+    };
+    private YouTube mYoutubeDataApi;
+    private final GsonFactory mJsonFactory = new GsonFactory();
+    private final HttpTransport mTransport = AndroidHttp.newCompatibleTransport();
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
@@ -51,71 +51,46 @@ public class GalleryFragment extends Fragment {
     }
 
 
+
+
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         ((MainActivity)getActivity()).setActionBarTitle("Gallery");
 
-        albumList = new ArrayList<>();
-        recyclerView = (RecyclerView)view.findViewById(R.id.gallery_recycler_view);
-        recyclerView.setHasFixedSize(true);
-        layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        url = "http://192.168.43.231:8000/api/get/albums";
-        sendRequest();
-    }
-
-    public void sendRequest()
-    {
-        JsonArrayRequest req = new JsonArrayRequest(url,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-//                       Log.d("Response : ", response.toString());
-
-                        try {
-                            // Parsing json array response
-                            // loop through each json object
-                            for (int i = 0; i < response.length(); i++) {
-
-                                JSONObject l = (JSONObject) response.get(i);
+        getFragmentManager().beginTransaction()
+                .replace(R.id.container, new AlbumListFragment())
+                .commit();
 
 
-                                String title = l.getString("title");
-                                String date = l.getString("date");
-                                String location = l.getString("location");
-                                String cover = l.getString("cover");
+        photo = view.findViewById(R.id.imageButton);
 
-                                //add condition to exclude main image
-                                Album album = new Album(title, location, date, cover);
-                                albumList.add(album);
-
-                            }
-                            adapter = new GalleryAdapter(getActivity(), albumList);
-                            recyclerView.setAdapter(adapter);
-
-                            adapter.notifyDataSetChanged();
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                            Toast.makeText(getActivity(),
-                                    "Error: " + e.getMessage(),
-                                    Toast.LENGTH_LONG).show();
-                        }
-
-//                        hidepDialog();
-                    }
-                }, new Response.ErrorListener() {
+        photo.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onErrorResponse(VolleyError error) {
-                VolleyLog.d("VolleyError", "Error: " + error.getMessage());
-                Toast.makeText(getActivity(),
-                        error.getMessage(), Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.container, new AlbumListFragment())
+                        .commit();
+
             }
         });
 
-        // Adding request to request queue
-        RequestQueue queue = Volley.newRequestQueue(getActivity());
-        queue.add(req);
+        video = view.findViewById(R.id.videoButton);
+        video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                mYoutubeDataApi = new YouTube.Builder(mTransport, mJsonFactory, null)
+                        .setApplicationName(getResources().getString(R.string.app_name))
+                        .build();
+
+                getFragmentManager().beginTransaction()
+                        .replace(R.id.container, YouTubeRecyclerViewFragment.newInstance(mYoutubeDataApi, YOUTUBE_PLAYLISTS))
+                        .commit();
+
+            }
+        });
+
+
     }
 }

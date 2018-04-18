@@ -46,13 +46,13 @@ public class ScheduleFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
 
         ((MainActivity)getActivity()).setActionBarTitle("Schedule");
-        ImageView imageView = (ImageView)view.findViewById(R.id.expandedImage);
+        ImageView imageView = view.findViewById(R.id.expandedImage);
         Glide.with(getActivity()).load(R.drawable.schedulee).into(imageView);
 
 
         eventList = new ArrayList<>();
 
-        recyclerView = (RecyclerView)view.findViewById(R.id.schedule_recycler_view);
+        recyclerView = view.findViewById(R.id.schedule_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setNestedScrollingEnabled(false);
         layoutManager = new LinearLayoutManager(getActivity());
